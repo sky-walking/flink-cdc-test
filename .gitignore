@@ -8,6 +8,7 @@
 /httpRequests/
 /target
 target
+/dependency-reduced-pom.xml
 
 ### STS ###
 .apt_generated

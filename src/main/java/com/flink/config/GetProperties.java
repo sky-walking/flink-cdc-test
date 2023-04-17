@@ -17,5 +17,6 @@ public class GetProperties {
     }
 
     // Kafka相关
+    public static String kafkaBootstrapServers = properties.getProperty("kafka.bootstrap.servers");
     public static String testTopic = properties.getProperty("testTopic.topic");
 }

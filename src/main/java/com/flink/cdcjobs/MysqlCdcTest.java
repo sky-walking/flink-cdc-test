@@ -1,5 +1,7 @@
 package com.flink.cdcjobs;
 
+import com.flink.config.GetProperties;
+import com.flink.sink.SinkToKafka;
 import com.ververica.cdc.connectors.mysql.MySqlSource;
 import com.ververica.cdc.debezium.DebeziumSourceFunction;
 import org.apache.flink.streaming.api.datastream.DataStreamSource;
@@ -38,7 +40,7 @@ public class MysqlCdcTest {
         mysqlDS.print();
 
         //4.写入到kafka
-//        mysqlDS.addSink(SinkToKafka.getKafkaProducer(GetProperties.testTopic, GetProperties.kafkaBootstrapServers));
+        mysqlDS.addSink(SinkToKafka.getKafkaProducer(GetProperties.testTopic, GetProperties.kafkaBootstrapServers));
 
         //5.执行任务
         env.execute();

@@ -29,7 +29,7 @@ public class SqlServerCdcTest {
         //2.创建CDC Source
         SourceFunction<String> sqlServerCdcSource = SqlServerSource.<String>builder()
                 .hostname(serverName)
-                .port(1433)
+                .port(portNumber)
                 .database(databaseName) // monitor sqlserver database
                 .tableList(tableName) // monitor products table
                 .username(username)
